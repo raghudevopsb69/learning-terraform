@@ -44,11 +44,11 @@ output "sample" {
 
 // Refer list variable, print 0 index value
 output "sample1" {
-  value = var.sample1[0]
+  value = var.list1[0]
 }
 
 // Refer map variable, print string key value
 output "sample2" {
-  value = var.sample2["string"]
+  value = var.map1["string"]
 }
 
