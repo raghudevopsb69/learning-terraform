@@ -47,6 +47,10 @@ output "sample1" {
   value = var.list1[0]
 }
 
+output "sample11" {
+  value = element(var.list1, 0)
+}
+
 // Refer map variable, print string key value
 output "sample2" {
   value = var.map1["string"]
