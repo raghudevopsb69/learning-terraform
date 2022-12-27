@@ -52,3 +52,6 @@ output "sample2" {
   value = var.map1["string"]
 }
 
+output "sample21" {
+  value = lookup(var.map1, "string", null)
+}
