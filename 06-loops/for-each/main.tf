@@ -5,8 +5,7 @@ variable "instances" {
       instance_type = "t3.micro"
     }
     two = {
-      ami           = "ami-0b5eea76982371e91"
-      instance_type = "t2.micro"
+      ami = "ami-0b5eea76982371e91"
     }
   }
 }
@@ -14,7 +13,7 @@ variable "instances" {
 resource "aws_instance" "test1" {
   for_each      = var.instances
   ami           = each.value["ami"]
-  instance_type = each.value["instance_type"]
+  instance_type = each.value["instance_type"] == "" ? "t2.micro" : each.value["instance_type"]
   tags = {
     Name = "instance-${each.key}"
   }
