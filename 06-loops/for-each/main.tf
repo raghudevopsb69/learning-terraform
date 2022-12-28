@@ -12,9 +12,8 @@ variable "instances" {
 }
 
 resource "aws_instance" "test1" {
-  for_each = var.instances
-  ami      = each.value["ami"]
-  //ami           = element(var.amis, count.index)
+  for_each      = var.instances
+  ami           = each.value["ami"]
   instance_type = each.value["instance_type"]
   tags = {
     Name = "instance-${each.key}"
